@@ -68,7 +68,7 @@ show_fake_logs() {
 show_credit_box() {
   echo -e "${BOLD}${BRIGHT_CYAN}"
   echo "╔══════════════════════════════════════════════════════════════╗"
-  echo -e "║ ${YELLOW}${BOLD}👨‍💻By Akshay Kumar${NC}${BRIGHT_CYAN}${BOLD} — DevOps Engineer & Corporate Trainer   ║"
+  echo -e "║     ${YELLOW}${BOLD}By Akshay Kumar${NC}${BRIGHT_CYAN}${BOLD} — DevOps Engineer & Corporate Trainer   ║"
   echo "╚══════════════════════════════════════════════════════════════╝"
   echo -e "${NC}\n"
 }
@@ -125,7 +125,7 @@ MAVENBLOCK
 ██   ██║██╔══╝  ██║╚██╗██║██╔═██╗ ██║██║╚██╗██║╚════██║
 ╚█████╔╝███████╗██║ ╚████║██║  ██╗██║██║ ╚████║███████║
  ╚════╝ ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
-                                                                                                        
+                                                                                                                                                                                                                                              
 JENKINSBLOCK
       ;;
     "Docker")
@@ -155,12 +155,12 @@ LINUXBLOCK
     "ShellScripting")
       read -r -d '' block <<'SHELLSCRIPTINGBLOCK'
 
-███████╗██╗  ██╗███████╗██╗     ██╗     ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗██╗███╗   ██╗ ██████╗ 
-██╔════╝██║  ██║██╔════╝██║     ██║     ██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝██║████╗  ██║██╔════╝ 
-███████╗███████║█████╗  ██║     ██║     ███████╗██║     ██████╔╝██║██████╔╝   ██║   ██║██╔██╗ ██║██║  ███╗
-╚════██║██╔══██║██╔══╝  ██║     ██║     ╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   ██║██║╚██╗██║██║   ██║
-███████║██║  ██║███████╗███████╗███████╗███████║╚██████╗██║  ██║██║██║        ██║   ██║██║ ╚████║╚██████╔╝
-╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+███████╗██╗  ██╗███████╗██╗     ██╗     ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗
+██╔════╝██║  ██║██╔════╝██║     ██║     ██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝ 
+███████╗███████║█████╗  ██║     ██║     ███████╗██║     ██████╔╝██║██████╔╝   ██║   
+╚════██║██╔══██║██╔══╝  ██║     ██║     ╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   
+███████║██║  ██║███████╗███████╗███████╗███████║╚██████╗██║  ██║██║██║        ██║   
+╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝  
                                                                                                           
 SHELLSCRIPTINGBLOCK
       ;;
@@ -188,7 +188,7 @@ ANSIBLEBLOCK
                                                                                                                                                                                        
 TERRAFORMBLOCK
       ;;
-    "Kubernets")
+    "Kubernetes")
       read -r -d '' block <<'KUBERNETESBLOCK'
 
 ██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗ ███╗   ██╗███████╗████████╗███████╗███████╗
@@ -259,18 +259,6 @@ GRAFANABLOCK
 ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
                                                                                                                                         
 NEXUSBLOCK
-      ;;
-    "Devops")
-      read -r -d '' block <<'DEVOPSBLOCK'
-
-██████╗ ███████╗██╗   ██╗ ██████╗ ██████╗ ███████╗
-██╔══██╗██╔════╝██║   ██║██╔═══██╗██╔══██╗██╔════╝
-██║  ██║█████╗  ██║   ██║██║   ██║██████╔╝███████╗
-██║  ██║██╔══╝  ╚██╗ ██╔╝██║   ██║██╔═══╝ ╚════██║
-██████╔╝███████╗ ╚████╔╝ ╚██████╔╝██║     ███████║
-╚═════╝ ╚══════╝  ╚═══╝   ╚═════╝ ╚═╝     ╚══════╝
-                                                                                                                                            
-DEVOPSBLOCK
       ;;
     *)
       block="$tool"
@@ -363,8 +351,9 @@ echo ""
 echo -e "${BRIGHT_CYAN}${BOLD}============================================================${NC}"
 sleep 5
 
+
 # Tools (AWS removed)
-tools=("AWS" "Git" "Maven" "Jenkins" "Docker" "Linux" "ShellScripting" "Ansible" "Terraform" "Kubernets" "Tomcat" "Nginx" "Prometheus" "Grafana" "Nexus" "Devops")
+tools=("AWS" "Git" "Maven" "Jenkins" "Docker" "Linux" "ShellScripting" "Ansible" "Terraform" "Kubernetes" "Tomcat" "Nginx" "Prometheus" "Grafana" "Nexus")
 
 # Installation simulation
 idx=0
@@ -374,8 +363,8 @@ for tool in "${tools[@]}"; do
   clear
   echo -e "${BRIGHT_CYAN}${BOLD}----------------------------------------------------------"
   echo -e " "
-  echo -e "${BRIGHT_CYAN}${BOLD}>>> Preparing to install: ${BRIGHT_GREEN}${BOLD}$tool${NC}\n"
-  echo -e "${YELLOW}${BOLD}${tool} is started installing...${NC}"
+  echo -e " ${BRIGHT_CYAN}${BOLD}>>> Preparing to install: ${BRIGHT_GREEN}${BOLD}$tool${NC}\n"
+  echo -e " ${YELLOW}${BOLD}${tool} is started installing...${NC}"
   # spawn a background sleeper to simulate activity, pass its pid to spinner
   ( for i in {1..24}; do sleep 0.12; done ) &
   pid=$!
@@ -383,7 +372,7 @@ for tool in "${tools[@]}"; do
   wait "$pid" 2>/dev/null
 
   show_fake_logs
-  echo -e "${GREEN}${BOLD}${tool} installation completed successfully!${NC}\n"
+  echo -e " ${GREEN}${BOLD}${tool} installation completed successfully!${NC}\n"
 
   # show big highlighted banner (large font + box)
   big_banner_box "$tool"
@@ -402,20 +391,78 @@ done
 
 # Extra Git line
 # echo -e "${MAGENTA}${BOLD}instaaltion of git is done${NC}"
-sleep 0.6
+# sleep 0.6
 
+clear
+echo " "
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
+echo -e "${BRIGHT_GREEN}${BOLD}   💻 Building the Future with DevOps Automation!${NC}"
+sleep 1
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
+echo -e "${BRIGHT_GREEN}${BOLD}  ⚙️ Transforming Ideas into Reality with DevOps!${NC}"
+sleep 1
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+echo " "
+DEVOPS_BANNER="${BRIGHT_GREEN}${BOLD}
+██████╗ ███████╗██╗   ██╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔════╝██║   ██║██╔═══██╗██╔══██╗██╔════╝
+██║  ██║█████╗  ██║   ██║██║   ██║██████╔╝███████╗
+██║  ██║██╔══╝  ╚██╗ ██╔╝██║   ██║██╔═══╝ ╚════██║
+██████╔╝███████╗ ╚████╔╝ ╚██████╔╝██║     ███████║
+╚═════╝ ╚══════╝  ╚═══╝   ╚═════╝ ╚═╝     ╚══════╝
+${NC}"
+echo -e "$DEVOPS_BANNER"
+echo ""
+# ==============================
+# Welcome message - Function: Print slow for typing effect
+# ==============================
+print_slow() {
+  local color="$1"    # Color codes
+  local text="$2"     # Actual message
+  local delay="${3:-0.03}"
 
+  # Print color codes first
+  printf "%b" "$color"
+
+  # Print message character by character
+  for ((i=0; i<${#text}; i++)); do
+    printf "%b" "${text:$i:1}"
+    sleep "$delay"
+  done
+
+  # Reset color at the end
+  printf "%b\n" "${NC}"
+}
+
+# Example usage
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
+echo -e "${BRIGHT_GREEN}${BOLD}          Your DevOps Journey Begins Here!${NC}"
+sleep 1
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
+print_slow "${BRIGHT_GREEN}${BOLD}" "         🚀 Welcome to the World of DevOps!" 0.05
+sleep 1
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
+echo -e "${BLUE}${BOLD}         📅 $(date '+%A, %d %B %Y %H:%M:%S')${NC}"
+sleep 1
+echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+
+sleep 1
 # ==========================
 # 💻 DevOps Footer Banner
 # ==========================
 echo -e "${BRIGHT_CYAN}${BOLD}"
-echo "╔══════════════════════════════════════════════╗"
-echo -e "║${BRIGHT_GREEN}${BOLD}               💻  D E V O P S               ${BRIGHT_CYAN}║"
-echo "╠══════════════════════════════════════════════╣"
+echo "╔═══════════════════════════════════════════════╗"
+echo -e "║${BRIGHT_GREEN}${BOLD}               💻  D E V O P S               ${BRIGHT_CYAN}  ║"
+echo "╠═══════════════════════════════════════════════╣"
 echo -e "║${YELLOW}${BOLD}     🚀 Automate | Innovate | Collaborate      ${BRIGHT_CYAN}║"
-echo "╠══════════════════════════════════════════════╣"
-echo -e "║${MAGENTA}${BOLD}        Scripted with ❤️  by ${YELLOW}sak_shetty       ${BRIGHT_CYAN}║"
-echo "╚══════════════════════════════════════════════╝"
+echo "╠═══════════════════════════════════════════════╣"
+echo -e "║${MAGENTA}${BOLD}        Scripted with ❤️  by ${YELLOW}sak_shetty       ${BRIGHT_CYAN} ║"
+echo "╚═══════════════════════════════════════════════╝"
 echo -e "${NC}"
 sleep 1
 
