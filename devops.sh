@@ -21,7 +21,7 @@ REVERSE='\033[7m'
 # Spinner animation (uses kill -0 to check process)
 spinner() {
   local pid=$1
-  local delay=0.08
+  local delay=0.04
   local spinstr="|/-\\"
   while kill -0 "$pid" 2>/dev/null; do
     for ch in $(echo -n "$spinstr" | sed -e 's/./& /g'); do
@@ -366,7 +366,7 @@ for tool in "${tools[@]}"; do
   echo -e " ${BRIGHT_CYAN}${BOLD}>>> Preparing to install: ${BRIGHT_GREEN}${BOLD}$tool${NC}\n"
   echo -e " ${YELLOW}${BOLD}${tool} is started installing...${NC}"
   # spawn a background sleeper to simulate activity, pass its pid to spinner
-  ( for i in {1..24}; do sleep 0.12; done ) &
+  ( for i in {1..15}; do sleep 0.07; done ) &
   pid=$!
   spinner "$pid"
   wait "$pid" 2>/dev/null
@@ -404,6 +404,7 @@ sleep 1
 echo -e "${BRIGHT_GREEN}${BOLD}  ⚙️ Transforming Ideas into Reality with DevOps!${NC}"
 sleep 1
 echo -e "${CYAN}────────────────────────────────────────────────────${NC}"
+sleep 1
 echo " "
 DEVOPS_BANNER="${BRIGHT_GREEN}${BOLD}
 ██████╗ ███████╗██╗   ██╗ ██████╗ ██████╗ ███████╗
@@ -414,6 +415,7 @@ DEVOPS_BANNER="${BRIGHT_GREEN}${BOLD}
 ╚═════╝ ╚══════╝  ╚═══╝   ╚═════╝ ╚═╝     ╚══════╝
 ${NC}"
 echo -e "$DEVOPS_BANNER"
+sleep 1
 echo ""
 # ==============================
 # Welcome message - Function: Print slow for typing effect
