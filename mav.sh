@@ -23,7 +23,7 @@ echo
 
 # ────────────────────────────────────────────────────────────────────
 # Variables
-MAVEN_VERSION="3.9.11"
+MAVEN_VERSION="3.9.12"
 MAVEN_ARCHIVE="apache-maven-${MAVEN_VERSION}-bin.tar.gz"
 MAVEN_FOLDER="apache-maven-${MAVEN_VERSION}"
 INSTALL_PATH="$HOME/maven"
