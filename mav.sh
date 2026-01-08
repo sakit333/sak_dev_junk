@@ -16,7 +16,7 @@ RESET="\e[0m"
 clear
 echo -e "${CYAN}${BOLD}"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "                 Apache Maven Installer  v3.9.11"
+echo "                 Apache Maven Installer  v3.9.12"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "${GREEN}     scripted by sak_shetty — DevOps Engineer${RESET}"
 echo
