@@ -16,7 +16,7 @@ RESET="\e[0m"
 clear
 echo -e "${CYAN}${BOLD}"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "                 Apache Tomcat Installer  v9.0.111"
+echo "                 Apache Tomcat Installer  v9.0.115"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "${GREEN}            scripted by @sak_shetty — DevOps Engineer${RESET}"
 echo
@@ -24,7 +24,7 @@ echo
 
 set -euo pipefail
 
-TOMCAT_VERSION="9.0.111"
+TOMCAT_VERSION="9.0.115"
 TOMCAT_ARCHIVE="apache-tomcat-${TOMCAT_VERSION}.tar.gz"
 TOMCAT_URL="https://dlcdn.apache.org/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/${TOMCAT_ARCHIVE}"
 
