@@ -16,14 +16,14 @@ RESET="\e[0m"
 clear
 echo -e "${CYAN}${BOLD}"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "                 Apache Maven Installer  v3.9.12"
+echo "                 Apache Maven Installer  v3.9.14"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "${GREEN}     scripted by sak_shetty — DevOps Engineer${RESET}"
 echo
 
 # ────────────────────────────────────────────────────────────────────
 # Variables
-MAVEN_VERSION="3.9.12"
+MAVEN_VERSION="3.9.14"
 MAVEN_ARCHIVE="apache-maven-${MAVEN_VERSION}-bin.tar.gz"
 MAVEN_FOLDER="apache-maven-${MAVEN_VERSION}"
 INSTALL_PATH="$HOME/maven"
