@@ -1,63 +1,82 @@
 #!/bin/bash
-# setup_mysql.sh
-# Automate MySQL installation, configuration, and remote access setup
 
-# Exit on error
 set -e
 
-echo "=========================================================="
-echo "Author : Akshay Kumar (@sak_shetty)"
-echo "Role   : DevOps Engineer"
-echo "Purpose: Automate MySQL installation, configuration,"
-echo "             and remote access setup on Ubuntu systems."
-echo "=========================================================="
-echo ""
-
-# Variables
 MYSQL_ROOT_PASSWORD="1234"
 MYSQL_CONF="/etc/mysql/mysql.conf.d/mysqld.cnf"
 
-echo "🚀 Updating system packages..."
-sudo apt update && sudo apt upgrade -y
+echo "========================================"
+echo "MySQL Setup Script"
+echo "========================================"
 
-echo "📦 Installing MySQL server..."
+# Update package list
+
+sudo apt update
+
+# Install MySQL only if not installed
+
+if command -v mysql >/dev/null 2>&1; then
+echo "✅ MySQL is already installed. Skipping installation."
+else
+echo "📦 Installing MySQL..."
 sudo apt install -y mysql-server
+fi
 
-echo "✅ Checking MySQL version..."
-sudo mysql --version
+# Display version
 
-echo "🔧 Configuring MySQL root password and remote access..."
+echo "📋 MySQL Version:"
+mysql --version
 
-# Run SQL commands directly from shell
+# Start MySQL if not running
+
+if systemctl is-active --quiet mysql; then
+echo "✅ MySQL service is already running."
+else
+echo "🚀 Starting MySQL service..."
+sudo systemctl start mysql
+fi
+
+# Create/update remote root user
+
+echo "🔧 Configuring MySQL users..."
+
 sudo mysql <<EOF
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${MYSQL_ROOT_PASSWORD}';
 CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
+ALTER USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
 
-echo "🌐 Enabling remote connections..."
+# Configure bind-address
 
-# Backup config before modifying
-if [ -f "$MYSQL_CONF" ]; then
-  sudo cp "$MYSQL_CONF" "${MYSQL_CONF}.bak"
-  echo "✅ Backup created at ${MYSQL_CONF}.bak"
-fi
+if grep -q "^bind-address = 0.0.0.0" "$MYSQL_CONF"; then
+echo "✅ Remote access already enabled."
+else
+echo "🌐 Enabling remote access..."
 
-# Update bind-address to allow remote connections
-sudo sed -i "s/^bind-address.*/bind-address = 0.0.0.0/" "$MYSQL_CONF"
-
-echo "🔁 Restarting MySQL service..."
+sudo cp "$MYSQL_CONF" "${MYSQL_CONF}.bak" 2>/dev/null || true
+sudo sed -i 's/^bind-address.*/bind-address = 0.0.0.0/' "$MYSQL_CONF"
 sudo systemctl restart mysql
 
-echo "🟢 Checking MySQL service status..."
-sudo systemctl status mysql --no-pager
+fi
 
-echo "🎉 MySQL installation and configuration complete!"
-echo "✅ Root password: ${MYSQL_ROOT_PASSWORD}"
-echo "✅ Remote access enabled (bind-address = 0.0.0.0)"
+# Enable service at boot
 
-echo "=========================================================="
-echo "✅ Script executed successfully by @sak_shetty"
-echo "🕒 Execution Time: $(date)"
-echo "=========================================================="
+sudo systemctl enable mysql >/dev/null 2>&1
+
+echo ""
+echo "📋 MySQL Users:"
+sudo mysql -e "SELECT user,host,plugin FROM mysql.user;"
+
+echo ""
+echo "📋 Listening Ports:"
+sudo ss -tulpn | grep 3306 || true
+
+echo ""
+echo "========================================"
+echo "✅ Setup Complete"
+echo "========================================"
+echo "Username : root"
+echo "Password : ${MYSQL_ROOT_PASSWORD}"
+echo "Port     : 3306"
+echo "========================================"
